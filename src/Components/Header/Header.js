@@ -1,8 +1,9 @@
 import { Link, Links, NavLink, Outlet, useLocation } from "react-router-dom";
 import { Body } from "../Body/Body";
 import "./Header.css";
+import { Usestate } from "../Hooks/Usestate";
 export const Header = ({ items }) => {
-  console.log(items);
+  // console.log(items);
   let location = useLocation();
   let search = new URLSearchParams(location.search);
   let name = search.get("name");
@@ -24,6 +25,7 @@ export const Header = ({ items }) => {
         {/* <Navbar data ={arr} /> */}
         {/* <Link to="/header/contact">Contact</Link>
          <Link to="/header/about">About</Link> */}
+         <Usestate/>
         <NavLink
           style={({ isActive }) => {
             return isActive ? { color: "plum" } : {};
@@ -47,7 +49,7 @@ export const Header = ({ items }) => {
 };
 
 export const Navbar = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="navbar">
